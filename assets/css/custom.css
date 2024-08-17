@@ -197,3 +197,17 @@
 #about_h_2 {
     background-color: rgb(241, 248, 233);
 }
+
+h4 {
+    font-family: Roboto, sans-serif;
+    color: #555;
+    font-size: 23px;
+}
+
+.main-content ul {
+    padding: 35px;
+}
+
+.main-content ul li {
+    font-family: Roboto, sans-serif;
+}

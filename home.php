@@ -33,11 +33,9 @@ $assets_url = get_template_directory_uri();
         <div class="swiper-wrapper">
         <?php $slider_fields = get_group_by_name('slider-content'); ?>
         <?php for ($i = 1; $i <= 2; $i++) { ?>
-                <?php $img_url = $slider_fields['image-' . $i] ?? "";
-                      $text_content = $slider_fields['content-' . $i] ?? "No text"; ?>
             <div class="swiper-slide">
-                <img src="<?= $img_url ?>" alt="Slide 1">
-                <div class="centered-paragraph"><?= $text_content ?></div>
+                <img src="<?= $slider_fields['image-' . $i] ?>" alt="Slide 1">
+                <div class="centered-paragraph"><?= $slider_fields['content-' . $i] ?></div>
             </div>
         <?php } ?>
         </div>
@@ -180,27 +178,24 @@ $assets_url = get_template_directory_uri();
     </div>
 </section>
 
-<section>
+<section class="main-content">
+    <?php
+        $first_section_fields = get_group_by_name('first-section');
+    ?>
     <div class="container my-5">
         <div class="row">
             <!-- Text Content -->
-            <div class="col-md-6">
-                <h5 class="fw-bold">МЕТЕОСТАНЦИЯНИНГ ОНЛАЙН ТАБЛОСИ</h5>
-                <ul>
-                    <li class="mb-5 mt-4">* Метеостанция ёрдамида oлинган маълумотлар</li>
-                    <li class="mb-5">* Бир ҳафталик об-ҳаво ва бошқа агрометеорологик башоратлар</li>
-                    <li class="mb-5">* Агрономлар учун керакли статистик кўрсаткичлар</li>
-                    <li class="mb-5">* 30 дан ошиқ касалликлар ва зараркунандалар учун башоратлар</li>
-                </ul>
+            <div class="col-md-6 p-5">
+                <?= $first_section_fields['content'] ?>
             </div>
             <!-- Image Content -->
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <img src="image-top.png" alt="Meteostation Dashboard" class="img-fluid rounded">
+                        <img src="<?= $first_section_fields['first-image'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
                     </div>
                     <div class="col-12">
-                        <img src="image-bottom.png" alt="Meteostation Graphs" class="img-fluid rounded">
+                        <img src="<?= $first_section_fields['second-image'] ?>" alt="Meteostation Graphs" class="img-fluid rounded">
                     </div>
                 </div>
             </div>

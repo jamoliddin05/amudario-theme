@@ -9,7 +9,7 @@ body{
 font-family: 'Poppins', sans-serif;
 }
 ul{
-list-style:none;
+ list-style-type: circle;
 padding:0;
  }
 

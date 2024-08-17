@@ -21,6 +21,8 @@ function get_group_by_name($group_name) {
 
         if ( ! empty( $field_value ) ) {
             $field_values[ $field['name'] ] = $field_value;
+        } else {
+            $field_values[ $field['name'] ] = 'no value';
         }
     }
 
