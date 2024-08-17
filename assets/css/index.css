@@ -236,19 +236,28 @@ min-height:680px;
 .swiper-button-custom-next {
  position: absolute;
  top: 50%;
- right: 10px; /* Position from the right edge */
+ right: 10px; /* Position from the left edge */
  transform: translateY(-50%); /* Center vertically */
  background-color: transparent; /* Semi-transparent background */
  color: #fff; /* Icon color */
- padding: 10px;
+ width: 50px; /* Equal width and height for a perfect circle */
+ height: 50px;
  border-radius: 50%; /* Rounded button */
  cursor: pointer;
  z-index: 10; /* Ensure it's above the slider */
  display: flex;
  align-items: center;
  justify-content: center;
- border: 1px solid white;
+ border: 2px solid white; /* Thicker border to make it more visible */
  transition: 0.3s ease-in;
+ font-size: 20px; /* Adjust font size to control arrow size */
+ line-height: 1; /* Ensure proper centering */
+}
+
+.swiper-button-custom-next i {
+ position: absolute;
+ top: 27%;
+ left: 30%;
 }
 
 /* Style for custom prev button */
@@ -259,15 +268,24 @@ min-height:680px;
  transform: translateY(-50%); /* Center vertically */
  background-color: transparent; /* Semi-transparent background */
  color: #fff; /* Icon color */
- padding: 10px;
+ width: 50px; /* Equal width and height for a perfect circle */
+ height: 50px;
  border-radius: 50%; /* Rounded button */
  cursor: pointer;
  z-index: 10; /* Ensure it's above the slider */
  display: flex;
  align-items: center;
  justify-content: center;
- border: 1px solid white;
+ border: 2px solid white; /* Thicker border to make it more visible */
  transition: 0.3s ease-in;
+ font-size: 20px; /* Adjust font size to control arrow size */
+ line-height: 1; /* Ensure proper centering */
+}
+
+.swiper-button-custom-prev i {
+ position: absolute;
+ top: 27%;
+ left: 30%;
 }
 
 /* Optional: Hover effects */

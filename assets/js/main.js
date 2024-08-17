@@ -1,6 +1,6 @@
 var swiper = new Swiper('.swiper-container', {
     loop: true,
-    speed: 800, // Transition speed (in milliseconds)
+    speed: 500, // Transition speed (in milliseconds)
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
