@@ -98,8 +98,13 @@ transform: scale3d(1.05,1.05,1);
 color: #54be73!important; 
  }
 .bg_green{
-background: #54be73!important; 
+background: #9ed22d;
+ transition: 0.3s ease-in;
  }
+.bg_green:hover {
+ background: #0056b3; /* Change to desired hover color */
+ transition: 0.3s ease-in;
+}
 .bg_back{
 background:#000000a6;
 }
@@ -159,7 +164,7 @@ background-color:#54be73;
 }
 
 .border_1{
-border:1px solid #dbf7e3;
+border: none;
  }
 
 .dropdown:hover .dropdown-menu { 
@@ -486,9 +491,9 @@ margin-bottom:10px;
 
 /*********************about_h****************/
 .about_h2i1 span{
-width:80px;
-height:80px;
-line-height:80px; 
+width:60px;
+height:60px;
+line-height:60px;
  }
 .about_h2i1 {
 top:-40px; 

@@ -1,0 +1,199 @@
+.swiper-container,
+.swiper-slide {
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;         /* Non-prefixed version */
+}
+
+.swiper-container {
+    touch-action: pan-y; /* Ensures touch events only for vertical scrolling */
+    overflow: hidden;    /* Hide overflow to prevent dragging outside */
+}
+
+/* Default cursor style */
+.swiper-container {
+    cursor: grab; /* Cursor for when not dragging */
+}
+
+/* Cursor style when dragging */
+.swiper-container.grabbing {
+    cursor: grabbing; /* Cursor for when dragging */
+}
+
+.swiper-wrapper {
+    display: flex; /* Flexbox for layout */
+}
+
+.swiper-slide {
+    flex: 0 0 100%; /* Ensure slides take full width of the container */
+    height: 100%; /* Ensure slides take full height of the container */
+    box-sizing: border-box;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    pointer-events: none; /* Disable mouse events on images */
+    user-drag: none;
+}
+
+/* Default cursor */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Cursor during dragging */
+.swiper-container.grabbing {
+    cursor: grabbing; /* Cursor when dragging */
+}
+
+/* Style for custom next button */
+.swiper-button-custom-next {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Position from the left edge */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: transparent; /* Semi-transparent background */
+    color: #fff; /* Icon color */
+    width: 50px; /* Equal width and height for a perfect circle */
+    height: 50px;
+    border-radius: 50%; /* Rounded button */
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above the slider */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; /* Thicker border to make it more visible */
+    transition: 0.3s ease-in;
+    font-size: 20px; /* Adjust font size to control arrow size */
+    line-height: 1; /* Ensure proper centering */
+}
+
+.swiper-button-custom-next i {
+    position: absolute;
+    top: 27%;
+    left: 30%;
+}
+
+/* Style for custom prev button */
+.swiper-button-custom-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Position from the left edge */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: transparent; /* Semi-transparent background */
+    color: #fff; /* Icon color */
+    width: 50px; /* Equal width and height for a perfect circle */
+    height: 50px;
+    border-radius: 50%; /* Rounded button */
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above the slider */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white; /* Thicker border to make it more visible */
+    transition: 0.3s ease-in;
+    font-size: 20px; /* Adjust font size to control arrow size */
+    line-height: 1; /* Ensure proper centering */
+}
+
+.swiper-button-custom-prev i {
+    position: absolute;
+    top: 27%;
+    left: 30%;
+}
+
+/* Optional: Hover effects */
+.swiper-button-custom-next:hover,
+.swiper-button-custom-prev:hover {
+    background-color: #0563aa;
+    border: 1px solid #0563aa;
+    transition: 0.3s ease-in;
+}
+
+
+.centered-paragraph {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 50%;
+    color: #555;
+}
+
+.centered-paragraph h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #555;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+#navbar_sticky {
+    z-index: 100;
+}
+
+#dropdownMenuLink {
+    background-color: #0563aa;
+    border: none;
+}
+
+.dropdown-item:active {
+    background-color: #0563aa;
+}
+
+.dropdown-custom {
+    min-width: 5rem;
+}
+
+#about_h {
+    margin-top: 40px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #555;
+}
+
+.section-title:before,
+.section-title:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc; /* Line color */
+}
+
+.section-title:before {
+    margin-right: 10px; /* Space between line and text */
+}
+
+.section-title:after {
+    margin-left: 10px; /* Space between line and text */
+}
+
+.section-title span {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Text color */
+    background-color: white; /* Background color behind text */
+    padding: 0 10px; /* Padding to add space between text and background */
+}
+
+#about_h_2 {
+    background-color: rgb(241, 248, 233);
+}

@@ -1,0 +1,24 @@
+@media (max-width: 992px) {
+    .centered-paragraph {
+        top: 60%;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+        padding: 20px;
+        left: 10%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 80%;
+    }
+
+    .centered-paragraph h3 {
+        font-size: 20px;
+    }
+
+    .centered-paragraph p {
+        font-size: 14px;
+    }
+
+    .custom-margin-dropdown {
+        right: 10px;
+    }
+}
