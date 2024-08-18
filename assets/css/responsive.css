@@ -17,8 +17,13 @@
     .centered-paragraph p {
         font-size: 14px;
     }
+}
 
-    .custom-margin-dropdown {
-        right: 10px;
-    }
+
+.mobile-logo {
+    text-align: center;
+}
+
+#dropdownMenuLinkMobile, #dropdownMenuLinkMobileContact {
+    background-color: #0563aa;
 }

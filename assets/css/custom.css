@@ -211,3 +211,26 @@ h4 {
 .main-content ul li {
     font-family: Roboto, sans-serif;
 }
+
+.footer {
+    background-color: #0563aa;
+}
+
+.footer span {
+    font-size: 25px;
+}
+
+.footer span, .footer p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-buttons {
+    margin-left: auto;
+}
+
+.footer .contact-buttons a {
+    background: #9ed22d;
+    padding: 12px;
+    font-family: Roboto, sans-serif;
+}

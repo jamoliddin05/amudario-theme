@@ -11,17 +11,49 @@ $assets_url = get_template_directory_uri();
 
 <section id="header">
     <nav class="navbar pt-4 navbar-expand-md navbar-light bg-white shadow_box" id="navbar_sticky">
-        <div class="container">
+        <div class="container d-none d-md-flex">
             <a href="<?= home_url() ?>">
                 <img class="logo-img" src="<?= $assets_url ?>/assets/img/logo.png" alt="logo"/>
             </a>
 
-            <div class="dropdown show custom-margin-dropdown">
+            <div class="contact-buttons">
+                <a href="mailto:info@amudar.io" class="button primary">info@amudar.io</a>
+                <a href="tel:+998900350225" class="button primary m-2">+998 90 035-02-25</a>
+            </div>
+
+            <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                 <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/uz/">Uzbek</a>
                     <a class="dropdown-item" href="/ru/">Русский</a>
                     <a class="dropdown-item" href="/en/">English</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-block d-md-none mobile-menu">
+            <div class="mobile-logo mb-3">
+                <a href="<?= home_url() ?>">
+                    <img class="logo-img" src="<?= $assets_url ?>/assets/img/logo.png" alt="logo"/>
+                </a>
+            </div>
+
+            <div class="sticky-buttons d-flex justify-content-between">
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLinkMobileContact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Алока</a>
+                    <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLinkMobileContact">
+                        <a href="mailto:info@amudar.io" class="dropdown-item contact-link">info@amudar.io</a>
+                        <a href="tel:+998900350225" class="dropdown-item contact-link">+998 90 035-02-25</a>
+                    </div>
+                </div>
+
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLinkMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLinkMobile">
+                        <a class="dropdown-item" href="/uz/">Uzbek</a>
+                        <a class="dropdown-item" href="/ru/">Русский</a>
+                        <a class="dropdown-item" href="/en/">English</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,134 +78,43 @@ $assets_url = get_template_directory_uri();
 </section>
 
 <section id="about_h" class="p_3">
+    <?php $first_icon_fields = get_group_by_name('first-icons-section'); ?>
     <div class="container-xl">
         <div class="row about_h1 text-center mb-4">
             <div class="col-md-12">
-                <span class="mt-2 section-title">ҚИШЛОҚ ХЎЖАЛИГИ СОХАСИДАГИ АЙРИМ МУАММОЛАР</span>
+                <span class="mt-2 section-title"><?= $first_icon_fields['title-first-icons'] ?></span>
             </div>
         </div>
         <div class="row about_h2">
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2">
-                            <i class="fa fa-cloud"></i>
-                        </span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Corporate Services</h5>
-                        <p class="mb-0">Guaranteed that all of your universal waste management is performed safely and
-                            responsibly.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2"><i
-                                    class="fa fa-inbox"></i></span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Convenient Pickup</h5>
-                        <p class="mb-0">We offer business pickup services to safely recycle your electronics in a safe
-                            manner.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2"><i
-                                    class="fa fa-calendar"></i></span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">E-waste Events</h5>
-                        <p class="mb-0">We work with non-profits, businesses, and other organizations to host community
-                            e-waste events.</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            for ($i = 1; $i <= 3; $i++) {
+                echo $first_icon_fields['icon-html-' . $i];
+            }
+            ?>
         </div>
         <div class="row about_h2 justify-content-around">
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2">
-                            <i class="fa fa-cloud"></i>
-                        </span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Corporate Services</h5>
-                        <p class="mb-0">Guaranteed that all of your universal waste management is performed safely and
-                            responsibly.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1 position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2"><i
-                                    class="fa fa-inbox"></i></span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Convenient Pickup</h5>
-                        <p class="mb-0">We offer business pickup services to safely recycle your electronics in a safe
-                            manner.</p>
-                    </div>
-                </div>
-            </div>
+            <?php for ($i = 4; $i <= 5; $i++) {
+                echo $first_icon_fields['icon-html-' . $i];
+            }
+            ?>
         </div>
     </div>
 </section>
 
 <section id="about_h_2" class="p_3">
+    <?php $second_icon_fields = get_group_by_name('second-icons-section'); ?>
     <div class="container-xl">
         <div class="row about_h1 text-center mb-4 pt-4">
             <div class="col-md-12">
-                <span class="mt-2 section-title">ҚИШЛОҚ ХЎЖАЛИГИ СОХАСИДАГИ АЙРИМ МУАММОЛАР</span>
+                <span class="mt-2 section-title"><?= $second_icon_fields['title-second-icons'] ?></span>
             </div>
         </div>
         <div class="row about_h2">
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2">
-                            <i class="fa fa-cloud"></i>
-                        </span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Corporate Services</h5>
-                        <p class="mb-0">Guaranteed that all of your universal waste management is performed safely and
-                            responsibly.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2"><i
-                                    class="fa fa-inbox"></i></span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">Convenient Pickup</h5>
-                        <p class="mb-0">We offer business pickup services to safely recycle your electronics in a safe
-                            manner.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about_h2i text-center position-relative">
-                    <div class="about_h2i1  position-absolute w-100">
-                        <span class="d-inline-block bg_green text-white rounded-circle text-center fs-2"><i
-                                    class="fa fa-calendar"></i></span>
-                    </div>
-                    <div class="about_h2i2 p-2 px-4 rounded-3 border_1">
-                        <h5 class="mb-3 mt-4">E-waste Events</h5>
-                        <p class="mb-0">We work with non-profits, businesses, and other organizations to host community
-                            e-waste events.</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            for ($i = 1; $i <= 3; $i++) {
+                echo $second_icon_fields['icon-html-second-' . $i];
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -203,43 +144,64 @@ $assets_url = get_template_directory_uri();
     </div>
 </section>
 
-<section id="footer" class="p_3">
-    <div class="container-xl">
-        <div class="footer_1 row">
-            <div class="col-md-4">
-                <div class="footer_1i">
-                    <h4 class="mb-4"><a class="text-white" href="index.html"><i
-                                    class="fa fa-recycle me-1 col_green align-middle"></i> Recycling</a></h4>
-                    <p class="text-white-50">Family-owned company from San Diego proudly serving individuals and
-                        businesses in Southern California.</p>
-                    <h6 class="text-light"><i class="fa fa-map-marker col_green me-1"></i> 120 Lorem Circle, Tan Porta,
-                        DA</h6>
-                    <h6 class="mt-3"><i class="fa fa-phone col_green me-1"></i> <a class="text-light" href="#">+123 4567
-                            890</a></h6>
-                    <h6 class="mt-3 mb-0"><i class="fa fa-envelope col_green me-1"></i> <a class="text-light" href="#">info@gmail.com</a>
-                    </h6>
+<section class="main-content p-4" style="background-color: rgb(227, 242, 253);">
+    <?php
+    $second_section_fields = get_group_by_name('second-section');
+    ?>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Image Content -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <img src="<?= $second_section_fields['first-image-second-section'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="footer_1i row">
-                    <div class="col-md-6"><img src="img/35-3.jpg" class="w-100"></div>
-                    <div class="col-md-6"><img src="img/35-1.jpg" class="w-100"></div>
-                    <div class="col-md-6"><img src="img/35-2.jpg" class="w-100"></div>
-                    <div class="col-md-6"><img src="img/35-4.jpg" class="w-100"></div>
-                </div>
+            <!-- Text Content -->
+            <div class="col-md-6 p-5">
+                <?= $second_section_fields['content-second-section'] ?>
             </div>
-            <div class="col-md-4">
-                <div class="footer_1i">
-                    <h4 class="mb-4 text-white">Recent News</h4>
-                    <p class="text-white-50 mb-2">Chuck alcatra short ribs strip steak shoulder jowl</p>
-                    <h6 class="col_green">July 20, 2022</h6>
-                    <p class="text-white-50 mb-2 mt-3">Tail doner short ribs meatball jowl pork loin biltong</p>
-                    <h6 class="col_green">July 22, 2022</h6>
-                    <p class="text-white-50 mb-2 mt-3">Short loin pork chop kielbasa chicken bacon meatloaf</p>
-                    <h6 class="col_green mb-0">July 26, 2022</h6>
+        </div>
+    </div>
+</section>
+
+<section class="main-content">
+    <?php
+    $third_section_fields = get_group_by_name('third-section');
+    ?>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Text Content -->
+            <div class="col-md-6 p-5">
+                <?= $third_section_fields['content-third-section'] ?>
+            </div>
+            <!-- Image Content -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <img src="<?= $third_section_fields['first-image-third-section'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container text-center p-5">
+        <span>БУЮРТМА БЕРИНГ!</span>
+        <p>Буюртма бериш ва cизни қизиқтирган саволлар учун:</p>
+        <div class="contact-buttons">
+            <a href="mailto:info@amudar.io" class="button primary">info@amudar.io</a>
+            <a href="tel:+998900350225" class="button primary m-2">+998 90 035-02-25</a>
+        </div>
+    </div>
+</section>
+
+<section class="post-footer">
+    <div class="container p-2 text-center text-md-start">
+        <span>2024 © Amudar.io</span>
     </div>
 </section>
 </body>

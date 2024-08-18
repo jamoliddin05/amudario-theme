@@ -44,15 +44,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set the dropdown title based on the current language
     const dropdownTitle = document.getElementById('dropdownMenuLink');
+    const dropdownTitleMobile = document.getElementById('dropdownMenuLinkMobile');
     switch (currentLanguage) {
         case 'uz':
             dropdownTitle.textContent = 'Uzbek';
+            dropdownTitleMobile.textContent = 'Uzbek';
             break;
         case 'ru':
             dropdownTitle.textContent = 'Русский';
+            dropdownTitleMobile.textContent = 'Русский';
             break;
         case 'en':
             dropdownTitle.textContent = 'English';
+            dropdownTitleMobile.textContent = 'English';
             break;
         default:
             dropdownTitle.textContent = 'Select Language';
@@ -77,8 +81,11 @@ function switchLanguage(language) {
 // Add event listeners to dropdown items
 document.querySelectorAll('.dropdown-item').forEach(function(item) {
     item.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default link behavior
-        const language = item.getAttribute('href').match(/\/(uz|ru|en)\//)[1];
-        switchLanguage(language); // Call the switchLanguage function
+        // Check if the clicked item has the 'contact-link' class
+        if (!item.classList.contains('contact-link')) {
+            event.preventDefault(); // Prevent the default link behavior only if it's not a contact link
+            const language = item.getAttribute('href').match(/\/(uz|ru|en)\//)[1];
+            switchLanguage(language); // Call the switchLanguage function
+        }
     });
 });

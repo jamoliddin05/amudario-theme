@@ -1,5 +1,6 @@
 <?php
-function get_group_by_name($group_name) {
+function get_group_by_name($group_name): array
+{
     // Access the global $wpdb object
     global $wpdb;
 

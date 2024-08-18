@@ -13,9 +13,9 @@ $assets_url = get_template_directory_uri();
     <link href="<?= $assets_url ?>/assets/css/bootstrap.min.css" rel="stylesheet" >
     <link href="<?= $assets_url ?>/assets/css/font-awesome.min.css" rel="stylesheet" >
     <link href="<?= $assets_url ?>/assets/css/global.css" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/index.css" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/custom.css" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/responsive.css" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/index.css?v=1" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/custom.css?v=1" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/responsive.css?v=1" rel="stylesheet">
     <link rel="stylesheet" href="<?= $assets_url ?>/assets/css/swiper-bundle.min.css">
 
     <link href="<?= $assets_url ?>/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
