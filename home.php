@@ -188,6 +188,28 @@ $assets_url = get_template_directory_uri();
     </div>
 </section>
 
+<section class="main-content p-4" style="background-color: rgb(241, 248, 233);">
+    <?php
+    $fourth_section_fields = get_group_by_name('fourth-section');
+    ?>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Image Content -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <img src="<?= $fourth_section_fields['fourth-section-image'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+            <!-- Text Content -->
+            <div class="col-md-6 p-5">
+                <?= $fourth_section_fields['fourth-section-title'] ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="footer">
     <div class="container text-center p-5">
         <span>БУЮРТМА БЕРИНГ!</span>
