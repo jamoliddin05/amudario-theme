@@ -3,6 +3,9 @@
 <script src="<?= $assets_url ?>/assets/js/swiper-bundle.min.js"></script>
 <script src="<?= $assets_url ?>/assets/js/bootstrap.bundle.min.js"></script>
 <script src="<?= $assets_url ?>/assets/js/main.js?v=1"></script>
+<script src="<?= $assets_url ?>/assets/js/flickity.pkgd.min.js"></script>
+<script src="<?= $assets_url ?>/assets/js/fullscreen.js"></script>
+<script src="<?= $assets_url ?>/assets/js/carousel.js?v=1"></script>
 <script>
     window.onscroll = function() {myFunction()};
     var navbar_sticky = document.getElementById("navbar_sticky");

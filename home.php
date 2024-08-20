@@ -210,6 +210,29 @@ $assets_url = get_template_directory_uri();
     </div>
 </section>
 
+<section class="p-5" style="background-color: rgb(40, 40, 40);">
+    <div class="col-md-12">
+        <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
+    </div>
+    <div class="carousel" data-flickity='{ "lazyLoad": 2, "wrapAround": true, "fullscreen": true}'>
+        <?php
+        $args = array(
+            'post_type'      => 'post', // Post type
+            'category_name'  => 'gallery',     // Number of posts to retrieve
+        );
+
+        // Create a new instance of WP_Query
+        $gallery_posts = new WP_Query($args);
+
+        while ($gallery_posts->have_posts()) : $gallery_posts->the_post();
+            $photo = get_field('gallery-image'); // Ensure ACF (Advanced Custom Fields) plugin is active
+            ?>
+            <img class="carousel-image"
+                 data-flickity-lazyload="<?= $photo ?>" />
+        <?php endwhile; ?>
+    </div>
+</section>
+
 <section class="footer">
     <div class="container text-center p-5">
         <span>БУЮРТМА БЕРИНГ!</span>

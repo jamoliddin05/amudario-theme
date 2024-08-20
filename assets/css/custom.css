@@ -168,6 +168,7 @@
     align-items: center;
     text-align: center;
     color: #555;
+    font-size: 22px;
 }
 
 .section-title:before,
@@ -237,4 +238,11 @@ h4 {
 
 .main-content img {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.custom-img-resolution img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
 }
