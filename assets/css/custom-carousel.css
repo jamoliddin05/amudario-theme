@@ -1,44 +1,77 @@
 /* external css: flickity.css, fullscreen.css */
 
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
 .carousel {
     background: transparent;
 }
 
 .carousel-image {
     display: block;
-    height: 300px;
-    min-width: 150px;
-    max-width: 100%;
-    margin-right: 30px;
-    /* vertically center */
-}
-
-.carousel.is-fullscreen .carousel-image {
-    top: 12%;
-    height: auto;
-    width: 100%;
-    max-width: 1000px;
+    height: 200px;
+    width: 200px;
     object-fit: cover;
+    margin-right: 30px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 450px) and (max-width: 768px) {
     .carousel-image {
         display: block;
-        height: 150px;
-        min-width: auto;
-        max-width: 150px;
-        margin-right: 30px;
+        height: 140px;
+        width: 140px;
         object-fit: cover;
+        margin-right: 20px;
     }
 
-    .carousel.is-fullscreen .carousel-image {
-        top: 24%;
-        height: auto;
-        width: 300px;
-        object-fit: cover;
+    .flickity-button {
+        display: none;
     }
 }
+
+@media (max-width: 450px) {
+    .carousel-image {
+        display: block;
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+
+    .flickity-button {
+        display: none;
+    }
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    display: flex; /* Ensure the layout is always in place */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; /* Transition for both opacity and visibility */
+    cursor: pointer; /* Set cursor to pointer for the entire lightbox */
+}
+
+#lightbox.active {
+    visibility: visible; /* Make visible */
+    opacity: 1; /* Fade in */
+}
+
+#lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 2px solid white;
+    transform: scale(0.9); /* Start smaller */
+    transition: transform 0.4s ease-in-out; /* Adding transition for scaling */
+    cursor: default;
+}
+
+#lightbox.active img {
+    transform: scale(1); /* Scale up to original size */
+}
+

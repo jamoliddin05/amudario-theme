@@ -12,16 +12,15 @@ $assets_url = get_template_directory_uri();
     <title>AmudarIO</title>
     <link href="<?= $assets_url ?>/assets/css/bootstrap.min.css" rel="stylesheet" >
     <link href="<?= $assets_url ?>/assets/css/global.css" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/index.css?v=1" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/custom.css?v=2" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/responsive.css?v=1" rel="stylesheet">
-    <link href="<?= $assets_url ?>/assets/css/custom-carousel.css?v=1" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/index.css?v=4" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/custom.css?v=4" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/responsive.css?v=2" rel="stylesheet">
+    <link href="<?= $assets_url ?>/assets/css/custom-carousel.css?v=2" rel="stylesheet">
     <link rel="stylesheet" href="<?= $assets_url ?>/assets/css/swiper-bundle.min.css">
 
     <link href="<?= $assets_url ?>/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="<?= $assets_url ?>/assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="<?= $assets_url ?>/assets/fontawesome/css/solid.css" rel="stylesheet" />
-
 
     <link rel="stylesheet" href="<?= $assets_url ?>/assets/css/flickity.min.css">
     <link rel="stylesheet" href="<?= $assets_url ?>/assets/css/fullscreen.css">

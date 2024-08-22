@@ -22,7 +22,8 @@ $assets_url = get_template_directory_uri();
             </div>
 
             <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                 <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/uz/">Uzbek</a>
                     <a class="dropdown-item" href="/ru/">Русский</a>
@@ -40,7 +41,9 @@ $assets_url = get_template_directory_uri();
 
             <div class="sticky-buttons d-flex justify-content-between">
                 <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLinkMobileContact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Алока</a>
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                       id="dropdownMenuLinkMobileContact" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">Алока</a>
                     <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLinkMobileContact">
                         <a href="mailto:info@amudar.io" class="dropdown-item contact-link">info@amudar.io</a>
                         <a href="tel:+998900350225" class="dropdown-item contact-link">+998 90 035-02-25</a>
@@ -48,7 +51,8 @@ $assets_url = get_template_directory_uri();
                 </div>
 
                 <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLinkMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLinkMobile"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuLinkMobile">
                         <a class="dropdown-item" href="/uz/">Uzbek</a>
                         <a class="dropdown-item" href="/ru/">Русский</a>
@@ -63,13 +67,13 @@ $assets_url = get_template_directory_uri();
 <section id="slider-area">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-        <?php $slider_fields = get_group_by_name('slider-content'); ?>
-        <?php for ($i = 1; $i <= 2; $i++) { ?>
-            <div class="swiper-slide">
-                <img src="<?= $slider_fields['image-' . $i] ?>" alt="Slide 1">
-                <div class="centered-paragraph"><?= $slider_fields['content-' . $i] ?></div>
-            </div>
-        <?php } ?>
+            <?php $slider_fields = get_group_by_name('slider-content'); ?>
+            <?php for ($i = 1; $i <= 2; $i++) { ?>
+                <div class="swiper-slide">
+                    <img src="<?= $slider_fields['image-' . $i] ?>" alt="Slide 1">
+                    <div class="centered-paragraph"><?= $slider_fields['content-' . $i] ?></div>
+                </div>
+            <?php } ?>
         </div>
 
         <div class="swiper-button-custom-prev d-none d-lg-block"><i class="fa-solid fa-arrow-left"></i></div>
@@ -121,7 +125,7 @@ $assets_url = get_template_directory_uri();
 
 <section class="main-content">
     <?php
-        $first_section_fields = get_group_by_name('first-section');
+    $first_section_fields = get_group_by_name('first-section');
     ?>
     <div class="container my-5">
         <div class="row">
@@ -133,10 +137,12 @@ $assets_url = get_template_directory_uri();
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <img src="<?= $first_section_fields['first-image'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                        <img src="<?= $first_section_fields['first-image'] ?>" alt="Meteostation Dashboard"
+                             class="img-fluid rounded">
                     </div>
                     <div class="col-12">
-                        <img src="<?= $first_section_fields['second-image'] ?>" alt="Meteostation Graphs" class="img-fluid rounded">
+                        <img src="<?= $first_section_fields['second-image'] ?>" alt="Meteostation Graphs"
+                             class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -154,7 +160,8 @@ $assets_url = get_template_directory_uri();
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <img src="<?= $second_section_fields['first-image-second-section'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                        <img src="<?= $second_section_fields['first-image-second-section'] ?>"
+                             alt="Meteostation Dashboard" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -180,7 +187,8 @@ $assets_url = get_template_directory_uri();
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <img src="<?= $third_section_fields['first-image-third-section'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                        <img src="<?= $third_section_fields['first-image-third-section'] ?>"
+                             alt="Meteostation Dashboard" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -198,7 +206,8 @@ $assets_url = get_template_directory_uri();
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <img src="<?= $fourth_section_fields['fourth-section-image'] ?>" alt="Meteostation Dashboard" class="img-fluid rounded">
+                        <img src="<?= $fourth_section_fields['fourth-section-image'] ?>" alt="Meteostation Dashboard"
+                             class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -214,11 +223,11 @@ $assets_url = get_template_directory_uri();
     <div class="col-md-12">
         <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
     </div>
-    <div class="carousel" data-flickity='{ "lazyLoad": 2, "wrapAround": true, "fullscreen": true}'>
+    <div class="carousel">
         <?php
         $args = array(
-            'post_type'      => 'post', // Post type
-            'category_name'  => 'gallery',     // Number of posts to retrieve
+            'post_type' => 'post', // Post type
+            'category_name' => 'gallery',     // Number of posts to retrieve
         );
 
         // Create a new instance of WP_Query
@@ -228,8 +237,11 @@ $assets_url = get_template_directory_uri();
             $photo = get_field('gallery-image'); // Ensure ACF (Advanced Custom Fields) plugin is active
             ?>
             <img class="carousel-image"
-                 data-flickity-lazyload="<?= $photo ?>" />
+                 data-flickity-lazyload="<?= $photo ?>"/>
         <?php endwhile; ?>
+    </div>
+    <div id="lightbox">
+        <img src="" alt="lightbox image">
     </div>
 </section>
 

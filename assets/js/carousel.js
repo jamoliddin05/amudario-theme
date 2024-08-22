@@ -1,24 +1,42 @@
-// Select the carousel and the sticky menu by its ID
-const carousel = document.querySelector('.carousel');
-const stickyMenu = document.getElementById('navbar_sticky');
+var carousel = document.querySelector('.carousel');
 
-// Function to check if the carousel is in fullscreen mode
-function checkFullscreen() {
-    if (carousel.classList.contains('is-fullscreen')) {
-        stickyMenu.style.display = 'none';
-    } else {
-        stickyMenu.style.display = 'block';
-    }
+function initializeFlickity() {
+    var flkty = new Flickity(carousel, {
+        lazyLoad: 10,
+        wrapAround: true,
+        cellSelector: '.carousel-image',
+        freeScroll: true,
+        pageDots: false
+    });
+    return flkty;
 }
 
-// Observe class changes in the carousel element
-const observer = new MutationObserver(checkFullscreen);
+// Initialize Flickity
+var flkty = initializeFlickity();
 
-// Start observing the carousel element for class changes
-observer.observe(carousel, {
-    attributes: true, // Look for attribute changes
-    attributeFilter: ['class'] // Only watch for class attribute changes
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = lightbox.querySelector('img');
+
+flkty.on('staticClick', function(event, pointer, cellElement, cellIndex) {
+    if (!cellElement) {
+        return;
+    }
+
+    var prevClickedCell = carousel.querySelector('.is-clicked');
+    if (prevClickedCell) {
+        prevClickedCell.classList.remove('is-clicked');
+    }
+    cellElement.classList.add('is-clicked');
+
+    // Open Lightbox with the clicked image
+    var imgSrc = cellElement.getAttribute('src');
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
 });
 
-// Initial check in case the page loads with the carousel already in fullscreen
-checkFullscreen();
+// Close Lightbox when clicked outside the image
+lightbox.addEventListener('click', function(e) {
+    if (e.target !== lightboxImg) {
+        lightbox.classList.remove('active');
+    }
+});
