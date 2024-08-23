@@ -206,10 +206,6 @@ h4 {
     font-size: 23px;
 }
 
-.main-content ul {
-    padding: 35px;
-}
-
 .main-content ul li {
     font-family: Roboto, sans-serif;
 }
@@ -256,7 +252,7 @@ h4 {
 
 .team-members {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 50px;
 }
 
@@ -300,22 +296,6 @@ h4 {
 .member-info ul li {
     margin-bottom: 10px;
     font-size: 13px;
-}
-
-@media (max-width: 780px) {
-    .team-members {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .member-info ul {
-        padding: 0;
-        font-size: 14px;
-        color: #555;
-        text-align: center;
-        margin: 0 auto;
-        width: 80%;
-    }
 }
 
 .news-grid {
@@ -371,4 +351,43 @@ h4 {
 
 .fw-bold {
     font-size: 18px;
+}
+
+.custom-font-size p, .custom-font-size li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.row {
+    display: flex;
+    align-items: center; /* Vertically centers the content within the row */
+}
+
+.custom-margin {
+    margin: 30px;
+}
+
+.main-content img {
+    width: 80%;
+    height: auto;
+}
+
+.container {
+    width: 80%;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.custom-container {
+    width: 100%;
+}
+
+.about_h2i2 h5 {
+    font-size: 14px;
+}
+
+.about_h2i2 p {
+    font-size: 10px;
 }

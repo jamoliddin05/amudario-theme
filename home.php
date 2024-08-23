@@ -131,13 +131,13 @@ $assets_url = get_template_directory_uri();
     <div class="container my-5">
         <div class="row">
             <!-- Text Content -->
-            <div class="col-md-6 p-3">
+            <div class="col-md-6 p-1 custom-font-size">
                 <h4 class="fw-bold"><?= $first_section_fields['first-section-title'] ?></h4>
                 <?= $first_section_fields['content'] ?>
             </div>
             <!-- Image Content -->
             <div class="col-md-6">
-                <div class="row">
+                <div class="row text-align-right">
                     <div class="col-12 mb-3">
                         <img src="<?= $first_section_fields['first-image'] ?>" alt="Meteostation Dashboard"
                              class="img-fluid rounded">
@@ -159,7 +159,7 @@ $assets_url = get_template_directory_uri();
     <div class="container my-5">
         <div class="row">
             <!-- Image Content -->
-            <div class="col-md-6">
+            <div class="col-md-6 mb-5">
                 <div class="row">
                     <div class="col-12 mb-3">
                         <img src="<?= $second_section_fields['first-image-second-section'] ?>"
@@ -168,7 +168,7 @@ $assets_url = get_template_directory_uri();
                 </div>
             </div>
             <!-- Text Content -->
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 px-4 custom-font-size">
                 <h4 class="fw-bold"><?= $second_section_fields['second-section-title'] ?></h4>
                 <?= $second_section_fields['content-second-section'] ?>
             </div>
@@ -183,13 +183,13 @@ $assets_url = get_template_directory_uri();
     <div class="container my-5">
         <div class="row">
             <!-- Text Content -->
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-5 custom-font-size">
                 <h4 class="fw-bold"><?= $third_section_fields['third-section-title'] ?></h4>
-                <?= $third_section_fields['content-third-section'] ?>
+                <p><?= $third_section_fields['content-third-section'] ?></p>
             </div>
             <!-- Image Content -->
             <div class="col-md-6">
-                <div class="row">
+                <div class="row text-align-right">
                     <div class="col-12 mb-3">
                         <img src="<?= $third_section_fields['first-image-third-section'] ?>"
                              alt="Meteostation Dashboard" class="img-fluid rounded">
@@ -207,7 +207,7 @@ $assets_url = get_template_directory_uri();
     <div class="container my-5">
         <div class="row">
             <!-- Image Content -->
-            <div class="col-md-6">
+            <div class="col-md-6 mb-5">
                 <div class="row">
                     <div class="col-12 mb-3">
                         <img src="<?= $fourth_section_fields['fourth-section-image'] ?>" alt="Meteostation Dashboard"
@@ -216,16 +216,16 @@ $assets_url = get_template_directory_uri();
                 </div>
             </div>
             <!-- Text Content -->
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 pl-5 custom-font-size">
                 <h4 class="fw-bold"><?= $fourth_section_fields['fourth-section-title'] ?></h4>
-                <?= $fourth_section_fields['fourth-section-content'] ?>
+                <p><?= $fourth_section_fields['fourth-section-content'] ?></p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="p-5" style="background-color: rgb(40, 40, 40);">
-    <div class="container">
+    <div class="container custom-container">
         <div class="col-md-12">
             <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
         </div>
@@ -258,14 +258,14 @@ $assets_url = get_template_directory_uri();
             <!-- Image Content -->
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-12 mb-3">
+                    <div class="col-12 mb-5">
                         <img src="<?= $fifth_section_fields['fifth-section-image'] ?>" alt="Meteostation Dashboard"
                              class="img-fluid rounded">
                     </div>
                 </div>
             </div>
             <!-- Text Content -->
-            <div class="col-md-6 p-3">
+            <div class="col-md-6 p-3 custom-font-size">
                 <h4 class="fw-bold mb-3"><?= $fifth_section_fields['fifth-section-title'] ?></h4>
                 <p><?= $fifth_section_fields['fifth-section-paragraph'] ?></p>
             </div>
@@ -280,13 +280,13 @@ $assets_url = get_template_directory_uri();
     <div class="container my-5">
         <div class="row">
             <!-- Text Content -->
-            <div class="col-md-6 p-3">
+            <div class="col-md-6 p-3 custom-font-size">
                 <h4 class="fw-bold mb-3"><?= $sixth_section_fields['sixth-section-title'] ?></h4>
                 <p><?= $sixth_section_fields['sixth-section-paragraph'] ?></p>
             </div>
             <!-- Image Content -->
             <div class="col-md-6">
-                <div class="row">
+                <div class="row text-align-right">
                     <div class="col-12 mb-3">
                         <img src="<?= $sixth_section_fields['sixth-section-image'] ?>" alt="Meteostation Dashboard"
                              class="img-fluid rounded">
