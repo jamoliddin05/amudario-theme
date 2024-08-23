@@ -10,15 +10,16 @@ $assets_url = get_template_directory_uri();
 <body>
 
 <section id="header">
-    <nav class="navbar pt-4 navbar-expand-md navbar-light bg-white shadow_box" id="navbar_sticky">
+    <nav class="navbar pt-3 navbar-expand-md navbar-light bg-white shadow_box" id="navbar_sticky">
         <div class="container d-none d-md-flex">
             <a href="<?= home_url() ?>">
                 <img class="logo-img" src="<?= $assets_url ?>/assets/img/logo.png" alt="logo"/>
             </a>
 
             <div class="contact-buttons">
-                <a href="mailto:info@amudar.io" class="button primary">info@amudar.io</a>
-                <a href="tel:+998900350225" class="button primary m-2">+998 90 035-02-25</a>
+                <?php $contact_info_fields = get_group_by_name('contact-info'); ?>
+                <a href="mailto:<?= $contact_info_fields['contact-email'] ?>" class="button primary"><?= $contact_info_fields['contact-email'] ?></a>
+                <a href="tel:<?= $contact_info_fields['contact-phone'] ?>" class="button primary m-2"><?= $contact_info_fields['contact-phone'] ?></a>
             </div>
 
             <div class="dropdown show">
@@ -83,7 +84,7 @@ $assets_url = get_template_directory_uri();
 
 <section id="about_h" class="p_3">
     <?php $first_icon_fields = get_group_by_name('first-icons-section'); ?>
-    <div class="container-xl">
+    <div class="container">
         <div class="row about_h1 text-center mb-4">
             <div class="col-md-12">
                 <span class="mt-2 section-title"><?= $first_icon_fields['title-first-icons'] ?></span>
@@ -96,7 +97,7 @@ $assets_url = get_template_directory_uri();
             }
             ?>
         </div>
-        <div class="row about_h2 justify-content-around">
+        <div class="row about_h2 justify-content-center">
             <?php for ($i = 4; $i <= 5; $i++) {
                 echo $first_icon_fields['icon-html-' . $i];
             }
@@ -107,7 +108,7 @@ $assets_url = get_template_directory_uri();
 
 <section id="about_h_2" class="p_3">
     <?php $second_icon_fields = get_group_by_name('second-icons-section'); ?>
-    <div class="container-xl">
+    <div class="container">
         <div class="row about_h1 text-center mb-4 pt-4">
             <div class="col-md-12">
                 <span class="mt-2 section-title"><?= $second_icon_fields['title-second-icons'] ?></span>
@@ -123,14 +124,15 @@ $assets_url = get_template_directory_uri();
     </div>
 </section>
 
-<section class="main-content">
+<section class="main-content" id="first-section">
     <?php
     $first_section_fields = get_group_by_name('first-section');
     ?>
     <div class="container my-5">
         <div class="row">
             <!-- Text Content -->
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-3">
+                <h4 class="fw-bold"><?= $first_section_fields['first-section-title'] ?></h4>
                 <?= $first_section_fields['content'] ?>
             </div>
             <!-- Image Content -->
@@ -167,6 +169,7 @@ $assets_url = get_template_directory_uri();
             </div>
             <!-- Text Content -->
             <div class="col-md-6 p-5">
+                <h4 class="fw-bold"><?= $second_section_fields['second-section-title'] ?></h4>
                 <?= $second_section_fields['content-second-section'] ?>
             </div>
         </div>
@@ -181,6 +184,7 @@ $assets_url = get_template_directory_uri();
         <div class="row">
             <!-- Text Content -->
             <div class="col-md-6 p-5">
+                <h4 class="fw-bold"><?= $third_section_fields['third-section-title'] ?></h4>
                 <?= $third_section_fields['content-third-section'] ?>
             </div>
             <!-- Image Content -->
@@ -213,45 +217,158 @@ $assets_url = get_template_directory_uri();
             </div>
             <!-- Text Content -->
             <div class="col-md-6 p-5">
-                <?= $fourth_section_fields['fourth-section-title'] ?>
+                <h4 class="fw-bold"><?= $fourth_section_fields['fourth-section-title'] ?></h4>
+                <?= $fourth_section_fields['fourth-section-content'] ?>
             </div>
         </div>
     </div>
 </section>
 
 <section class="p-5" style="background-color: rgb(40, 40, 40);">
-    <div class="col-md-12">
-        <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
-    </div>
-    <div class="carousel">
-        <?php
-        $args = array(
-            'post_type' => 'post', // Post type
-            'category_name' => 'gallery',     // Number of posts to retrieve
-        );
+    <div class="container">
+        <div class="col-md-12">
+            <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
+        </div>
+        <div class="carousel">
+            <?php
+            $currentPath = __FILE__; // Full path to the current file
+            $parentDir = dirname($currentPath);
+            $directory = $parentDir . '/assets/gallery/';
+            $imageFiles = getImageFiles($directory);
 
-        // Create a new instance of WP_Query
-        $gallery_posts = new WP_Query($args);
-
-        while ($gallery_posts->have_posts()) : $gallery_posts->the_post();
-            $photo = get_field('gallery-image'); // Ensure ACF (Advanced Custom Fields) plugin is active
+            $image_urls = addPrefixToArray($imageFiles, $assets_url. '/assets/gallery/');
+            foreach ($image_urls as $image_url) {
             ?>
-            <img class="carousel-image"
-                 data-flickity-lazyload="<?= $photo ?>"/>
-        <?php endwhile; ?>
+                <img class="carousel-image"
+                     data-flickity-lazyload="<?= $image_url ?>"/>
+            <?php } ?>
+        </div>
+        <div id="lightbox">
+            <img src="" alt="lightbox image">
+        </div>
     </div>
-    <div id="lightbox">
-        <img src="" alt="lightbox image">
+</section>
+
+<section class="main-content p-4" style="background-color: rgb(227, 242, 253);">
+    <?php
+    $fifth_section_fields = get_group_by_name('fifth-section');
+    ?>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Image Content -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <img src="<?= $fifth_section_fields['fifth-section-image'] ?>" alt="Meteostation Dashboard"
+                             class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+            <!-- Text Content -->
+            <div class="col-md-6 p-3">
+                <h4 class="fw-bold mb-3"><?= $fifth_section_fields['fifth-section-title'] ?></h4>
+                <p><?= $fifth_section_fields['fifth-section-paragraph'] ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-content p-4">
+    <?php
+    $sixth_section_fields = get_group_by_name('sixth-section');
+    ?>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Text Content -->
+            <div class="col-md-6 p-3">
+                <h4 class="fw-bold mb-3"><?= $sixth_section_fields['sixth-section-title'] ?></h4>
+                <p><?= $sixth_section_fields['sixth-section-paragraph'] ?></p>
+            </div>
+            <!-- Image Content -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <img src="<?= $sixth_section_fields['sixth-section-image'] ?>" alt="Meteostation Dashboard"
+                             class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team-section">
+    <div class="container">
+        <?php
+        $team_section_fields = get_group_by_name('team-section');
+        ?>
+        <span class="section-title"><?= $team_section_fields['team-section-title'] ?></span>
+        <div class="team-members mt-2">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="<?= $team_section_fields['member-one-image'] ?>" alt="Jasurbek Khodjaev">
+                </div>
+                <div class="member-info">
+                    <?= $team_section_fields['member-one-info'] ?>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="<?= $team_section_fields['member-two-image'] ?>" alt="Sarvar Abdullaev">
+                </div>
+                <div class="member-info">
+                    <?= $team_section_fields['member-two-info'] ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news-section">
+    <div class="container mt-4 mb-4">
+        <?php
+        $oav_section_fields = get_group_by_name('oav-about-section');
+        ?>
+        <span class="section-title"><?= $oav_section_fields['oav-section-title'] ?></span>
+        <div class="news-grid p-3">
+            <?php for ($j = 1; $j <= 6; $j++) {
+                ?>
+                <div class="news-item">
+                    <?= $oav_section_fields['oav-item-' . $j] ?>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+<section id="partners" style="background-color: rgb(227, 242, 253)" class="pt-4">
+    <?php
+    $partners_section_fields = get_group_by_name('partners-section');
+    ?>
+    <div class="container">
+        <span class="section-title"><?= $partners_section_fields['partners-section-title'] ?></span>
+        <div class="row custom-row">
+            <?php for ($j = 1; $j <= 6; $j++) {
+                ?>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 custom-col">
+                    <a href="<?= $partners_section_fields['partner-url-' . $j] ?>">
+                        <img src="<?= $partners_section_fields['partner-logo-' . $j] ?>">
+                    </a>
+                </div>
+            <?php } ?>
+        </div>
     </div>
 </section>
 
 <section class="footer">
     <div class="container text-center p-5">
-        <span>БУЮРТМА БЕРИНГ!</span>
-        <p>Буюртма бериш ва cизни қизиқтирган саволлар учун:</p>
+        <?php
+        $footer_section_fields = get_group_by_name('footer');
+        ?>
+        <?= $footer_section_fields['footer-content'] ?>
         <div class="contact-buttons">
-            <a href="mailto:info@amudar.io" class="button primary">info@amudar.io</a>
-            <a href="tel:+998900350225" class="button primary m-2">+998 90 035-02-25</a>
+            <a href="mailto:<?= $contact_info_fields['contact-email'] ?>" class="button primary"><?= $contact_info_fields['contact-email'] ?></a>
+            <a href="tel:<?= $contact_info_fields['contact-phone'] ?>" class="button primary m-2"><?= $contact_info_fields['contact-phone'] ?></a>
         </div>
     </div>
 </section>
