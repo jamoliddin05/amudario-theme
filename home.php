@@ -11,7 +11,7 @@ $assets_url = get_template_directory_uri();
 
 <section id="header">
     <nav class="navbar pt-3 navbar-expand-md navbar-light bg-white shadow_box" id="navbar_sticky">
-        <div class="container d-none d-md-flex">
+        <div class="container custom-container d-none d-md-flex">
             <a href="<?= home_url() ?>">
                 <img class="logo-img" src="<?= $assets_url ?>/assets/img/logo.png" alt="logo"/>
             </a>
