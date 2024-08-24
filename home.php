@@ -225,7 +225,7 @@ $assets_url = get_template_directory_uri();
 </section>
 
 <section class="py-5 px-4" style="background-color: rgb(40, 40, 40);">
-    <div>
+    <div class="container custom-container">
         <div class="col-md-12">
             <span class="mb-4 section-title" style="color: white">ФОТОГАЛЕРЕЯ</span>
         </div>
