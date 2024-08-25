@@ -351,9 +351,7 @@ $assets_url = get_template_directory_uri();
             <?php for ($j = 1; $j <= 6; $j++) {
                 ?>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 custom-col">
-                    <a href="<?= $partners_section_fields['partner-url-' . $j] ?>">
-                        <img src="<?= $partners_section_fields['partner-logo-' . $j] ?>">
-                    </a>
+                    <img src="<?= $partners_section_fields['partner-logo-' . $j] ?>">
                 </div>
             <?php } ?>
         </div>
